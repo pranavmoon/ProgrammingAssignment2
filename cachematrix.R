@@ -48,3 +48,19 @@ cacheSolve <- function(x, ...) {
         x$setinv(inv)
         inv
 }
+
+##### testing
+matrix<-function(){
+	set.seed(20)
+	x<-rnorm(16,2)
+	dim(x)<-c(4,4)
+	x
+##	solve(x)
+##	round(solve(x)%*%x,0)
+}
+
+###following statement will return the inverse of matrix when 
+###you compile the code in console by : source("cachematrix.R") in the 
+###working directory where this file is saved
+print(cacheSolve(makeCacheMatrix(matrix())))
+
